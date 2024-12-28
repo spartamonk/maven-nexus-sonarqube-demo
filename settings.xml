@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <pluginGroups>
+    <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+  </pluginGroups>
+  <proxies>
+  </proxies>
+  <servers>
+    <server>
+      <id>nexusdeploymentrepo</id>    <!-- add credentials to your nexus -->
+      <username>admin</username>
+      <password>admin</password>
+    </server>
+  </servers>
+  <mirrors>
+  </mirrors>
+  <profiles>
+    <!-- Development Environment Profile -->
+    <profile>
+      <id>env-dev</id>
+      <activation>
+        <activeByDefault>true</activeByDefault> <!-- Always active -->
+      </activation>
+      <properties>
+        <tomcatPath>/path/to/tomcat/instance</tomcatPath>
+      </properties>
+    </profile>
+
+    <!-- Snapshot Repository Profile -->
+    <profile>
+      <id>snapshot</id>
+      <activation>
+        <activeByDefault>true</activeByDefault> <!-- Always active -->
+      </activation>
+      <repositories>
+        <repository>
+          <id>nexus-snapshot-repo</id>
+          <name>Snapshot Repository</name>
+          <url>http://54.211.65.44:8081/repository/maven-snapshots/</url>
+        </repository>
+      </repositories>
+    </profile>
+
+    <!-- Release Repository Profile -->
+    <profile>
+      <id>release</id>
+      <activation>
+        <activeByDefault>true</activeByDefault> <!-- Always active -->
+      </activation>
+      <repositories>
+        <repository>
+          <id>nexus-release-repo</id>
+          <name>Release Repository</name>
+          <url>http://54.211.65.44:8081/repository/maven-release/</url>
+        </repository>
+      </repositories>
+    </profile>
+
+    <!-- SonarQube Profile -->
+    <profile>
+      <id>sonar</id>
+      <activation>
+        <activeByDefault>true</activeByDefault> <!-- Always active -->
+      </activation>
+      <properties>
+        <sonar.host.url>http://3.84.240.100:9000</sonar.host.url>
+      </properties>
+    </profile>
+  </profiles>
+</settings>
+
+
+
+
+<!-- mv settings.xml ~/.m2 -->
