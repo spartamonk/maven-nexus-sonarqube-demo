@@ -91,11 +91,11 @@
   <distributionManagement>
     <snapshotRepository>
       <id>nexusdeploymentrepo</id>
-      <url>http://54.211.65.44:8081/repository/maven-snapshots/</url> <!-- Update the IP/Address to Your Nexus VM IP -->
+      <url>http://3.94.214.119:8081/repository/maven-snapshots/</url> <!-- Update the IP/Address to Your Nexus VM IP -->
     </snapshotRepository>											  
 	<repository>
 	  <id>nexusdeploymentrepo</id>
-      <url>http://54.211.65.44:8081/repository/maven-releases/</url> <!-- Update the IP/Address to Your Nexus VM IP -->
+      <url>http://3.94.214.119:8081/repository/maven-releases/</url> <!-- Update the IP/Address to Your Nexus VM IP -->
     </repository>													 <!-- repos will be available by default in nexus -->
   </distributionManagement>
 </project>
